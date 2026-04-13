@@ -1,0 +1,73 @@
+{
+    "categories": [
+    {
+    "id": "nfa-in-action",
+    "title": "NFA in Action",
+    "icon": "",
+    "articles": [
+        {
+        "id": 1,
+        "title": "Strongly Disagree",
+        "date": "Disagree",
+        "author": "Neutral/Unsure",
+        "excerpt": "Agree",
+        "content": "",
+        "image": ""
+     },
+    {
+        "id": 2,
+        "title": "State Employee Benefits Premiums Set to rise!",
+        "date": "March 4, 2025",
+        "author": "Rachelle Bassen, Union President",
+        "excerpt": "Negotiating with the state to address the rising costs of employee benefits.",
+        "content": "The Union is actively negotiating with the state to address the rising costs of employee benefits. We are committed to ensuring that our members receive fair and affordable healthcare coverage. Stay tuned for updates on the progress of these negotiations and how they may impact your benefits. Join the next union meeting to learn more about how you can get involved and support our efforts to secure better benefits for all state employees.",
+        "image": ""
+    }
+      ]
+    },
+    {
+      "id": "bargaining-updates",
+      "title": "Bargaining Updates",
+      "icon": "",
+      "articles": [
+        {
+        "id": 3,
+        "title": "Bargaining Session Updates Summary - Week 4",
+        "date": "March 28, 2026",
+        "author": "WNC-NFA Lead Negotiator",
+        "excerpt": "Progress made on wage increases and workplace safety provisions.",
+        "content": "Click here for full article content...",
+        "image": ""
+        },
+        {
+        "id": 4,
+        "title": "Another header",
+        "date": "April 1, 2026",
+        "author": "WNC-NFA Lead Negotiator",
+        "excerpt": "TODO SUMMARY",
+        "content": "Click here for full article content...",
+        "image": ""
+        }
+      ]
+    },
+       {
+      "id": "member-spotlight",
+      "title": "Member Spotlight",
+      "icon": "",
+      "articles": [
+        {
+        "id": 5,
+        "title": "Member Spotlight: Buffy the Vampire Slayer",
+        "date": "March 6, 2026",
+        "author": "Membership Committee",
+        "excerpt": "Celebrating 25 years of service and union leadership at WNC.",
+        "content": "Click here for full article content...",
+        "image": ""
+        }
+      ]
+    }
+  ]
+}
+  
+
+

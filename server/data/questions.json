@@ -1,0 +1,60 @@
+{
+  "id": 1,
+  "title": "Faculty Experience Survey",
+  "scale": {
+    "0": "N/A",
+    "1": "Strongly Disagree",
+    "2": "Disagree",
+    "3": "Neutral/Unsure",
+    "4": "Agree",
+    "5": "Strongly Agree"
+  },
+  "questions": [
+    {
+      "id": 101,
+      "questionTitle": "How long have you been involved in the NFA-WNC?",
+      "type": "single",
+      "options": [
+        "0-3 years",
+        "4-9 years",
+        "10+ years"
+      ]
+    },
+    {
+      "id": 102,
+      "questionTitle": "Faculty can take the necessary amount of sick leave without negative consequences for their job security.",
+      "type": "scale"
+    },
+    {
+      "id": 103,
+      "questionTitle": "Faculty can participate in the decision-making processes at WNC.",
+      "type": "scale"
+    },
+    {
+      "id": 104,
+      "questionTitle": "Faculty can participate in the decision-making processes at WNC.",
+      "type": "scale"
+    },
+    {
+      "id": 105,
+      "questionTitle": "Faculty are fairly compensated for their work at WNC with decent overtime opportunities.",
+      "type": "scale"
+    },
+    {
+      "id": 106,
+      "questionTitle": "Faculty receive adequate support and resources to perform their job effectively at WNC.",
+      "type": "multi",
+      "options": [
+        "Better pay and benefits",
+        "Collaborative scheduling and workload distribution",
+        "Diversity, equity and inclusion initiatives",
+        "Professional development and training opportunities",
+        "Flexible scheduling and expanded sick leave policies",
+        "Stronger protections for academic freedom and shared governance"
+      ]
+    }
+  ]
+}
+  
+
+

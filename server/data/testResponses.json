@@ -1,0 +1,117 @@
+[
+    {
+      "responseId": "response1",
+      "answers": [
+        {
+        "questionId": 101,
+        "type": "single",
+        "value": "4-9 years"
+        },
+                {
+        "questionId": 102,
+        "type": "single",
+        "value": "4"
+        },
+                {
+        "questionId": 103,
+        "type": "scale",
+        "value": "5"
+        },
+                {
+        "questionId": 104,
+        "type": "scale",
+        "value": "4"
+        },
+                {
+        "questionId": 105,
+        "type": "scale",
+        "value": "4"
+        },
+                {
+        "questionId": 106,
+        "type": "multi",
+        "value": [
+            "Better pay and benefits",
+            "Diversity, equity and inclusion initiatives",
+            "Stronger protections for academic freedom and shared governance"
+        ]
+        }
+    ]
+},
+    {
+      "responseId": "response2",
+      "answers": [
+        {
+        "questionId": 101,
+        "type": "single",
+        "value": "0-3 years"
+        },
+                {
+        "questionId": 102,
+        "type": "single",
+        "value": "1"
+        },
+                {
+        "questionId": 103,
+        "type": "scale",
+        "value": "2"
+        },
+                {
+        "questionId": 104,
+        "type": "scale",
+        "value": "1"
+        },
+                {
+        "questionId": 105,
+        "type": "scale",
+        "value": "3"
+        },
+                {
+        "questionId": 106,
+        "type": "multi",
+        "value": [
+            "Flexible scheduling and expanded sick leave policies",
+            "Collaborative scheduling and workload distribution"
+        ]
+        }
+    ]
+},
+    {
+      "responseId": "response3",
+      "answers": [
+        {
+        "questionId": 101,
+        "type": "single",
+        "value": "0-3 years"
+        },
+                {
+        "questionId": 102,
+        "type": "single",
+        "value": "5"
+        },
+                {
+        "questionId": 103,
+        "type": "scale",
+        "value": "5"
+        },
+                {
+        "questionId": 104,
+        "type": "scale",
+        "value": "5"
+        },
+                {
+        "questionId": 105,
+        "type": "scale",
+        "value": "5"
+        },
+                {
+        "questionId": 106,
+        "type": "multi",
+        "value": [
+            "Professional development and training opportunities"
+        ]
+        }
+    ]
+}
+]
+  

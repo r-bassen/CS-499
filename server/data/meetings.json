@@ -1,0 +1,32 @@
+{
+    "upcomingMeetings": [
+    {
+    "date": "March 15, 2025",
+    "time": "4:00 PM-5:00 PM",
+    "title": "General Membership Meeting",
+    "location": "Virtual via Zoom",
+    "agenda": "Benefit negotiations update",
+    "zoomlink": "https://zoom.us/j/0000000"
+    },
+    {
+    "date": "March 22, 2025",
+    "time": "12:00 PM-3:00 PM",
+    "title": "Bargaining Committee",
+    "location": "Union Hall, Room 102",
+    "agenda": "Contract proposal review"
+    }
+],
+    "Monthly Chapter Meeting": [
+    {
+    "date": "Second Friday of Each Month",
+    "time": "9:00-10:00 AM",
+    "title": "Montly Chapter Meeting",
+    "location": "Virtual via Zoom",
+    "agenda": "Chapter Updates & Information - Open to All Members",
+    "zoomlink": "https://zoom.us/j/0000000"
+    }]
+}
+
+
+  
+

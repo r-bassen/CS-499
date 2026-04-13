@@ -1,0 +1,11 @@
+{
+  "siteName": "WNC-NFA Faculty Union",
+  "contactEmail": "union@wnc-nfa.edu",
+  "phone": "(555) 123-4567",
+
+  "colors": {
+    "primary": "#0a1929",
+    "secondary": "#ffd700",
+    "accent": "#e6edf7"
+  }
+}

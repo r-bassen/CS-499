@@ -1,4 +1,4 @@
-# Rachelle Bassen's Capstone Project 
+# Rachelle Bassen's Final Capstone Project 
 ## April 2026
 ### SNHU, CS-499
 

@@ -1,27 +1,51 @@
 ﻿// React component for the Chapter Updates page of the Nevada Faculty Alliance Chapter website. 
-
+// Updates content contains three menu tabs that load different information
+// imports
+import { useState } from 'react';
 import Grid from '@mui/material/Grid';
 import Stack from "@mui/material/Stack";
 import Paper from '@mui/material/Paper';
 import { Typography } from '@mui/material';
+import UpdateItem from '../components/updateSections';
+import updatesData from '../data/updates.json';
 
+// set update tab accent colors
+const tabColors = {
+    'nfa-in-action': '#0a1929',
+    'bargaining-updates': '#182748',
+    'member-spotlight': '#d1a906',
+    'meetings': '#2c3e50'
+}
 // Reference for Material UI components: https://mui.com/material-ui/react-grid/
+// 
 export default function Updates() {
+    // default to first tab on page if no other tabs are selected
+    const [selectedTab, setSelectedTab] = useState(updatesData.categories[0]);
+    // initiate variable to meetings JSON data
+    const color = tabColors[selectedTab.id] || '#0a1929';
+
+    // updates menu tabs
     return (
         <div className="home-container">
             <Grid container spacing={2}>
                 {/* Left Column - Sidebar */}
                 <Grid size={4}>
                     <Stack spacing={2}>
-                        <Paper sx={{ p: 2, bgcolor: '#f5f5f5' }}>
-                            <Typography variant="h6">NFA in Action!</Typography>
-                        </Paper>
-                        <Paper sx={{ p: 2, bgcolor: '#f5f5f5' }}>
-                            <Typography variant="h6">Bargaining Updates</Typography>
-                        </Paper>
-                        <Paper sx={{ p: 2, bgcolor: '#f5f5f5' }}>
-                            <Typography variant="h6">Upcoming Meetings</Typography>
-                        </Paper>
+                        {/* Set the sidebar tab layout */}
+                        {updatesData.categories.map(category => 
+                            <Paper key={category.id}
+                            sx={{ p: 2,
+                                bgcolor: selectedTab.id === category.id ? '#d1a906' : '#f5f5f5',
+                                color: selectedTab.id === category.id ? 'white' : 'inherit',
+                                cursor: 'pointer',
+                                borderLeft: `4px solid ${tabColors[category.id] || '#0a1929'}`,
+                                '&:hover': { bgcolor: 'd0e4f7', color: 'white' }
+                            }}
+                            // tab navigation
+                            onClick = {() => setSelectedTab(category)} >
+                                <Typography variant="h6">{category.title}</Typography>
+                            </Paper>
+                        )}
                     </Stack>
                 </Grid>
                 
@@ -29,53 +53,27 @@ export default function Updates() {
                 <Grid size={8}>
                     <Paper sx={{ p: 3, height: '100%', boxSizing: 'border-box' }}>
                         <Typography variant="h4" gutterBottom>
-                            Your Union in Action
+                            {selectedTab.title}
                         </Typography>
 
-                        <Typography variant="h5" gutterBottom sx={{ mt: 3 }}>
-                            State Employee Benefits Premiums Set to Rise!
-                        </Typography>
-
-                        <Typography variant="caption" display="block" sx={{ mb: 2, color: 'text.secondary' }}>
-                            March 4, 2025<br />
-                            by: Rachelle Bassen, Union President
-                        </Typography>
-
-                        <Typography paragraph>
-                            The Union is actively negotiating with the state to address the rising costs of employee benefits. We are committed to ensuring that our members receive fair and affordable healthcare coverage.
-                        </Typography>
-                        
-                        <Typography paragraph>
-                            Stay tuned for updates on the progress of these negotiations and how they may impact your benefits.
-                        </Typography>
-                        
-                        <Typography paragraph>
-                            Join the next union meeting to learn more about how you can get involved and support our efforts to secure better benefits for all state employees.
-                        </Typography>
-
-                        {/* Second Article */}
-                        <Typography variant="h5" gutterBottom sx={{ mt: 4 }}>
-                            Legislative Update: Education Funding
-                        </Typography>
-
-                        <Typography variant="caption" display="block" sx={{ mb: 2, color: 'text.secondary' }}>
-                            March 1, 2025<br />
-                            by: Rachelle Bassen, Union President
-                        </Typography>
-
-                        <Typography paragraph>
-                            The Nevada Legislature is currently reviewing the higher education budget. Your NFA team is monitoring several key bills that would impact faculty working conditions and compensation.
-                        </Typography>
-                        
-                        <Typography paragraph>
-                            We encourage all members to stay informed and participate in upcoming advocacy days at the legislature.
-                        </Typography>
+                        <Stack spacing={2} sx={{ mt: 2 }}>
+                        {/* Set the tabs to either the load the Meetings or Articles content */}
+                        {selectedTab.articles.map(article => (
+                            <UpdateItem 
+                                key= {article.id}
+                                item={article}
+                                type={selectedTab.id === 'meetings' ? 'meeting' : 'article'}
+                                color={color} 
+                                />
+                        ))}
+                        </Stack>
                     </Paper>
                 </Grid>
             </Grid>
         </div>
     );
 }
+
 
 
        

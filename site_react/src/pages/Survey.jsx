@@ -4,8 +4,6 @@
 //
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import SurveyForm from "../components/surveyform";
-import SurveyResults from "../components/surveyResults";
 import { getSurveyQuestions, submitSurvey } from "../services/surveyServices";
 import { authServices } from "../services/authServices";
 
@@ -120,7 +118,7 @@ if (submit) {
                          <p>Thank you for submitting the survey!</p>
 
                          {/* navigate to survey results after submitting survey */}
-                        <button onClick={() => navigate("/surveyResults")}
+                        <button onClick={() => navigate("/surveyresults")}
                              className = "view-results-btn">View Results</button>
                         <button onClick={handleLogout} className="logout-btn">
                             Logout

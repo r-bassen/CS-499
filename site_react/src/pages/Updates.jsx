@@ -27,11 +27,17 @@ export default function Updates() {
     useEffect(() => {
         getUpdates()
             .then(data => {
+                console.log('Udates data received', data);
                 setUpdatesData(data);
                 setSelectedTab(data.categories[0]);
             })
             .catch(loadError => console.error('Error loading updates:', loadError));
     }, []);
+
+    // Return the template and content for updates page
+    if (!updatesData || !selectedTab) {
+        return;
+    }
 
     // Return the template and content for updates page
     return (
@@ -48,7 +54,7 @@ export default function Updates() {
                                 color: selectedTab.id === category.id ? 'white' : 'inherit',
                                 cursor: 'pointer',
                                 borderLeft: `4px solid ${tabColors[category.id] || '#0a1929'}`,
-                                '&:hover': { bgcolor: 'd0e4f7', color: 'white' }
+                                '&:hover': { bgcolor: '#d0e4f7', color: 'white' }
                             }}
                             // tab navigation
                             onClick = {() => setSelectedTab(category)} >
@@ -72,6 +78,7 @@ export default function Updates() {
                                 key= {article.id}
                                 item={article}
                                 type={selectedTab.id === 'meetings' ? 'meeting' : 'article'}
+                                color={tabColors[selectedTab.id] || '#0a1929'}
                                 />
                         ))}
                         </Stack>

@@ -50,7 +50,7 @@ app.use('/', routes);
 
 // send the React index.html for any request that doesn't match an API route
 const buildPath = path.join(__dirname, '..', 'site_react', 'build');
-if (require('fs').existsSync(buildpath)) {
+if (require('fs').existsSync(buildPath)) {
     app.use(express.static(buildPath));
 }
 

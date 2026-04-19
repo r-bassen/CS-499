@@ -5,6 +5,8 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const fs = require('fs');
+const path = require('path');
 
 
 // Load environment variables from .env file
@@ -17,9 +19,21 @@ const routes = require('./routes/index');
 const app = express();
 const path = require('path');
 
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://r-bassen.github.io/CS-499/'
+];
+
 // middleware
 app.use(cors({
-    origin: 'http://localhost:5173', // default port used for Vite
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }, // default port used for Vite
     credentials: true, // Allow cookies to be sent
 }));
 
@@ -39,7 +53,9 @@ app.use((err, req, res, next) => {
 
 // send the React index.html for any request that doesn't match an API route
 const buildPath = path.join(__dirname, '..', 'site_react', 'build');
-app.use(express.static(buildPath));
+if (require('fs').existsSync(buildpath)) {
+    app.use(express.static(buildPath));
+}
 
 // set Node/Express backend port and listen for requests
 const PORT = process.env.PORT || 8080;

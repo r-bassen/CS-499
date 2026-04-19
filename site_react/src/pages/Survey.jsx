@@ -24,18 +24,18 @@ export default function Survey() {
     const isLoggedIn = authServices.isLoggedIn();
     const surveyId = 1;
 
-    //load survey questions from database
+    // pathway to login
+    useEffect(() => {
+        if (!authServices.isLoggedIn()) {
+            navigate("/login", {state: {from: {pathname: "/survey" }}});
+        } 
+    }, [navigate]);
+
+    // load survey questions
     useEffect(() => {
         async function getQuestions() {
-            // check for user login before fetching
-            const loggedIn = authServices.isLoggedIn();
-            console.log("Is logged in?", loggedIn);
-            if (!loggedIn) {
-                return;
-            }
-
             // get survey questions from the database using the surveyId
-           try {
+            try {
                 const surveyData = await getSurveyQuestions(surveyId);
 
                 // check if survey data is in expected format 
@@ -99,10 +99,6 @@ const handleSubmitSurvey = async (event) => {
     }
 };
     
-// login button handler
-const handleLogin = () => {
-    navigate("/login", { state: { from: {pathname:"/survey" } } });
-};
 
 // logout button handler
 const handleLogout = () => {
@@ -138,45 +134,35 @@ if (submit) {
                             {isLoggedIn && (
                                 <button onClick={handleLogout} className="logout-btn">Logout</button>
                             )}
-                            {/* Check for login before accessing the survey */}
-                            {!isLoggedIn && (
-                                <div className = "login-prompt">
-                                    <p>Please login to access the faculty survey.</p>
-                                <button onClick={handleLogin} className="login-redirect-btn">
-                                        Login to Access Survey
-                                    </button>
                         </div>
-                        )}
-                    </div>
+                     
+                        {/* Survey form - only show after logging in  */}
+                        <div className = "survey-section">
 
-                {/* Survey form - only show after logging in */}
-                    <div className = "survey-section">
+                            {Array.isArray(questions) && questions.length > 0 ? (
+                                <form onSubmit={handleSubmitSurvey}>
 
-                        {Array.isArray(questions) && questions.length > 0 ? (
-                            <form onSubmit={handleSubmitSurvey}>
-
-                            {questions.map((q, index) => (
-                                <SurveyForm 
-                                    key={q.id || index}
-                                    question={q}    
-                                    onResponseChange={handleResponseChange}
-                                    globalScale={globalScale}
-                                    />
-                            ))}
-                            <div className = "submit-section">
-                                <button 
-                                    type="submit"
-                                    className="submit-btn"
-                                    disabled={!isLoggedIn} >
-                                        {isLoggedIn ? "Submit Survey" : "Login to Access Survey"}
-                                    </button>
-                            </div>
-
-                            </form>
-                        ) : (
-                            <p>Loading questions...</p>
-                        )}
-                    </div>
+                                {questions.map((q, index) => (
+                                    <SurveyForm 
+                                        key={q.id || index}
+                                        question={q}    
+                                        onResponseChange={handleResponseChange}
+                                        globalScale={globalScale}
+                                        />
+                                ))}
+                                <div className = "submit-section">
+                                    <button 
+                                        type="submit"
+                                        className="submit-btn"
+                                        disabled={!isLoggedIn} >
+                                            {isLoggedIn ? "Submit Survey" : "Login to Access Survey"}
+                                        </button>
+                                </div>
+                                </form>
+                            ) : (
+                                <p></p>
+                            )}
+                        </div>
                 </div>
     );
 }

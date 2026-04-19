@@ -12,7 +12,7 @@ exports.login = async (req, res) => {
 
          // validate email and password input
          if (!email || !password) {
-            return res.status(400).sent({
+            return res.status(400).send({
                 message: "Email and password are required."
             });
          }

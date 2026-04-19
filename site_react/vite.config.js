@@ -6,6 +6,7 @@ import react from '@vitejs/plugin-react';
 // React RC
 export default defineConfig({
     plugins: [react()],
+    base: '/CS-499/',
     resolve: {
         extensions: ['.jsx', '.js', '.mjs', '.ts', '.tsx']
     },

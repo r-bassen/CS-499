@@ -12,7 +12,13 @@ require('dotenv').config();
 // https://node-postgres.com/apis/pool
 // 
 // call the database login parameters from the .env
-const pool = new Pool({
+const pool = new Pool(
+    process.env.DATABASE_URL
+    ? { 
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false }
+    }
+    :  {
          host: process.env.DB_HOST || 'localhost',
          user: process.env.DB_USER || 'wnc_nfa',
          password: process.env.DB_PASSWORD,
@@ -29,7 +35,7 @@ pool.connect((error, release) => {
         console.error("Error connecting to database", error.stack);
     } else {
         console.log("successfully connected to database");
-        release;
+        release();
     }
 });
 

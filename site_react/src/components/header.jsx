@@ -11,7 +11,7 @@ export default function Header() {
         <header id="header">
             <div id="logo">     
                 <img 
-                    src="{`${import.meta.env.BASE_URL}logo.png`}" 
+                    src={`${import.meta.env.BASE_URL}logo.png`}
                     alt="WNC NFA Logo" 
                     style={{ height: "125px" }}
                 />

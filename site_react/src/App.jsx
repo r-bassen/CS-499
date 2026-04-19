@@ -2,7 +2,7 @@
 // Reference for page navigation: https://reactrouter.com/start/framework/navigating
 // import the router
 // import the main layout template component and four different pages
-import { HashRouter, Routes, Route } from 'react-router-dom'; 
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'; 
 import MainLayout from './layout/mainLayout.jsx';
 import Home from './pages/Home.jsx';
 import Updates from './pages/Updates.jsx';

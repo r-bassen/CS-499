@@ -31,12 +31,14 @@ export default function UpdateItem({item, type, color}) {
         </Box>
 
         <Typography variant="body2" sx={{mt:1, color: '#0a1929'}}>
-            {item.title}
+            {item.location}
         </Typography>
 
         <Typography variant="body2" sx={{mt: 0.5, fontStyle: 'italic', color: '#ffd700'}}>
-            {item.title}
+            {item.agenda}
         </Typography>
+
+        <Typography variant="body2" sx={{ mt: 1 }}><strong>Zoom Link: </strong>{item.zoomlink}</Typography>
 
         </Paper>
            );

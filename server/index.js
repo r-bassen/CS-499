@@ -20,7 +20,7 @@ const path = require('path');
 
 const allowedOrigins = [
     'http://localhost:5173',
-    'https://r-bassen.github.io/CS-499/'
+    'https://r-bassen.github.io/'
 ];
 
 // middleware

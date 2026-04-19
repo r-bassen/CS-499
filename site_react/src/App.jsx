@@ -2,7 +2,7 @@
 // Reference for page navigation: https://reactrouter.com/start/framework/navigating
 // import the router
 // import the main layout template component and four different pages
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import { HashRouter, Routes, Route } from 'react-router-dom'; 
 import MainLayout from './layout/mainLayout.jsx';
 import Home from './pages/Home.jsx';
 import Updates from './pages/Updates.jsx';
@@ -15,8 +15,9 @@ import SurveyResults from './components/surveyResults.jsx';
 // main function
 function App() {
  // set router links to the four pages
+ // hashrouter used by Github Pages
     return (
-        <BrowserRouter>
+        <HashRouter>
         <div className="appContainer">
             <MainLayout>
                 <Routes>   
@@ -31,7 +32,7 @@ function App() {
                 </Routes>
             </MainLayout>
             </div>
-        </BrowserRouter>
+        </HashRouter>
   
     );
 }

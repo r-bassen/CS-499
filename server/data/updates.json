@@ -7,11 +7,11 @@
     "articles": [
         {
         "id": 1,
-        "title": "Strongly Disagree",
-        "date": "Disagree",
-        "author": "Neutral/Unsure",
-        "excerpt": "Agree",
-        "content": "",
+        "title": "Legislative Update: Education Funding",
+        "date": "March 1, 2025",
+        "author": " Rachelle Bassen, Union President",
+        "excerpt": "Advocating for more funding from the legislature.",
+        "content": "The Nevada Legislature is currently reviewing the higher education budget. Your NFA team is monitoring several key bills that would impact faculty working conditions and compensation. We encourage all members to stay informed and participate in upcoming advocacy days at the legislature.",
         "image": ""
      },
     {
@@ -36,7 +36,7 @@
         "date": "March 28, 2026",
         "author": "WNC-NFA Lead Negotiator",
         "excerpt": "Progress made on wage increases and workplace safety provisions.",
-        "content": "Click here for full article content...",
+        "content": "NFA is advocating for a 5% cost-of-living-increase for the next two years. This ensures that our members will receive sufficient salary ahead of the rising inflation likely to continue for at least another year.",
         "image": ""
         },
         {
@@ -44,8 +44,8 @@
         "title": "Another header",
         "date": "April 1, 2026",
         "author": "WNC-NFA Lead Negotiator",
-        "excerpt": "TODO SUMMARY",
-        "content": "Click here for full article content...",
+        "excerpt": "WNC stalls negotiations on critical proposals.",
+        "content": "WNC has not provided a counter to our article on Union rights. We have been waiting for over a month. As a result, we are not willing to negotiate on some of their asks until we see that proposal.",
         "image": ""
         }
       ]
@@ -65,7 +65,41 @@
         "image": ""
         }
       ]
-    }
+    },
+    {
+      "id": "meetings",
+      "title": "Upcoming Meetings",
+      "icon": "",
+        "articles": [
+          {
+            "id": 6,
+            "title": "General Membership Meeting",
+            "date": "March 15, 2025",
+            "time": "4:00 PM-5:00 PM",
+            "location": "Virtual via Zoom",
+            "agenda": "Benefit negotiations update",
+            "zoomlink": "https://zoom.us/j/0000000"
+            },
+            {
+            "id": 7,
+            "date": "March 22, 2025",
+            "time": "12:00 PM-3:00 PM",
+            "title": "Bargaining Committee",
+            "location": "Union Hall, Room 102",
+            "agenda": "Contract proposal review"
+            }
+        ],
+            "Monthly Chapter Meeting": [
+            {
+            "id": 8,
+            "date": "Second Friday of Each Month",
+            "time": "9:00-10:00 AM",
+            "title": "Montly Chapter Meeting",
+            "location": "Virtual via Zoom",
+            "agenda": "Chapter Updates & Information - Open to All Members",
+            "zoomlink": "https://zoom.us/j/0000000"
+            }]
+}
   ]
 }
   

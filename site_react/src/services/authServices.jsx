@@ -4,18 +4,20 @@
 import axios from 'axios';
 
 // // Express backend server call
-const API_URL = 'http://localhost:8080'; 
+const API_URL = import.meta.env.VITE_API_URL || 'https://wnc-nfa.onrender.com'; 
 
 // // authentication service functions for API calls to the Express backend server
 export const authServices = {
 
-    isLoggedIn() {      // check i user is logged in
-        return localStorage.getItem("accessToken") !== null; // check if token exists in local storage
+    isLoggedIn() {      // check if user is logged in
+        return localStorage.getItem("accessToken") !== null; 
     },
 
-    getCurrentUser: () => {     // get curret user
-        const userStr = localStorage.getItem('user'); // get user info from local storage
-        return userStr ? JSON.parse(userStr) : null; // parse and return user info, or null if not found
+    // get current user
+    // parse and return user info, or null if not found
+    getCurrentUser: () => { 
+        const userStr = localStorage.getItem('user');
+        return userStr ? JSON.parse(userStr) : null; 
     },
 
     // login function that sends email and password to the backend for authentication
@@ -36,22 +38,12 @@ export const authServices = {
 
                 // if login is successful, store token and user data
                 if (res.data && res.data.token) {
-                    // store the token
                     localStorage.setItem("accessToken", res.data.token);
-                    // store the user data 
-                    localStorage.setItem('user', JSON.stringify({
+                    localStorage.setItem('user', JSON.stringify({   // store user data as string
                         id: res.data.userId,
                         email: res.data.email
                     }));
-                // } {   
-                    // // store the token
-                    // localStorage.setItem("accessToken", res.token);
 
-                    // // store the user data 
-                    // localStorage.setItem('user', JSON.stringify({
-                    //     id: res.data.userId || res.data.id,
-                    //     email: res.data.email
-                    // }));
                 console.log("Login successful, token stored");
 
                 } else {    // log warning if no access token is returned

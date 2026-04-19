@@ -42,8 +42,18 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Health check for Render
+app.get('/health', (req, res) => res.status(200).json({ status: 'ok' }));
+
 // route to main router index.js
 app.use('/', routes);
+
+
+// send the React index.html for any request that doesn't match an API route
+const buildPath = path.join(__dirname, '..', 'site_react', 'build');
+if (require('fs').existsSync(buildpath)) {
+    app.use(express.static(buildPath));
+}
 
 // error handling middleware
 app.use((err, req, res, next) => {
@@ -51,11 +61,6 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Internal Server Error' });
 });
 
-// send the React index.html for any request that doesn't match an API route
-const buildPath = path.join(__dirname, '..', 'site_react', 'build');
-if (require('fs').existsSync(buildpath)) {
-    app.use(express.static(buildPath));
-}
 
 // set Node/Express backend port and listen for requests
 const PORT = process.env.PORT || 8080;

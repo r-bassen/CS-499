@@ -5,7 +5,7 @@ export default function Contract() {
     return (
          <div className="home-container">
             <iframe 
-                src="/NFAContract.pdf"
+                src={`${import.meta.env.BASE_URL}NFAContract.pdf`}
                 width="100%"
                 height="800px"
                 title="Current WNC-NFA Contract" />

@@ -4,7 +4,6 @@
 //
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import SurveyForm from "../components/surveyForm";
 import { getSurveyQuestions, submitSurvey } from "../services/surveyServices";
 import { authServices } from "../services/authServices";
 

@@ -6,7 +6,6 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const fs = require('fs');
-const path = require('path');
 
 
 // Load environment variables from .env file

@@ -6,6 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+
 // Load environment variables from .env file
 dotenv.config();
 
@@ -14,6 +15,7 @@ const routes = require('./routes/index');
 
 // create express app
 const app = express();
+const path = require('path');
 
 // middleware
 app.use(cors({
@@ -35,6 +37,9 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: 'Internal Server Error' });
 });
 
+// send the React index.html for any request that doesn't match an API route
+const buildPath = path.join(__dirname, '..', 'site_react', 'build');
+app.use(express.static(buildPath));
 
 // set Node/Express backend port and listen for requests
 const PORT = process.env.PORT || 8080;

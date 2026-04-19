@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { getSurveyQuestions, submitSurvey } from "../services/surveyServices";
 import { authServices } from "../services/authServices";
+import SurveyForm from '../components/surveyForm';
 
 
 // Survey form component

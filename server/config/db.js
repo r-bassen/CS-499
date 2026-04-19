@@ -30,7 +30,7 @@ const pool = new Pool(
 });
 
 // unit testing function to check database connection
-pool.connect((error, release) => {
+pool.connect((error, client, release) => {
     if (error) {
         console.error("Error connecting to database", error.stack);
     } else {

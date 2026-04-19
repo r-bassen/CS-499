@@ -6,6 +6,9 @@ import react from '@vitejs/plugin-react';
 // React RC
 export default defineConfig({
     plugins: [react()],
+    resolve: {
+        extensions: ['.jsx', '.js', '.mjs', '.ts', '.tsx']
+    },
     server: {
         proxy: {
             //point to Express backend server

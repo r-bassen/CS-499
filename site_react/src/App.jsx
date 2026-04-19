@@ -3,7 +3,7 @@
 // import the router
 // import the main layout template component and four different pages
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
-import MainLayout from './layout/MainLayout.jsx';
+import MainLayout from './layout/mainLayout.jsx';
 import Home from './pages/Home.jsx';
 import Updates from './pages/updates.jsx';
 import Contract from './pages/Contract.jsx';

@@ -5,7 +5,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
 import MainLayout from './layout/mainLayout.jsx';
 import Home from './pages/Home.jsx';
-import Updates from './pages/updates.jsx';
+import Updates from './pages/Updates.jsx';
 import Contract from './pages/Contract.jsx';
 import Survey from './pages/Survey.jsx';
 import Login from './pages/Login.jsx';

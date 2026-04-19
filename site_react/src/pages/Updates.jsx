@@ -1,30 +1,39 @@
 ﻿// React component for the Chapter Updates page of the Nevada Faculty Alliance Chapter website. 
 // Updates content contains three menu tabs that load different information
 // imports
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getUpdates } from '../services/updatesServices';
 import Grid from '@mui/material/Grid';
 import Stack from "@mui/material/Stack";
 import Paper from '@mui/material/Paper';
 import { Typography } from '@mui/material';
 import UpdateItem from '../components/updateSections';
-import updatesData from '../data/updates.json';
 
-// set update tab accent colors
+// set the update tab accent colors
 const tabColors = {
     'nfa-in-action': '#0a1929',
     'bargaining-updates': '#182748',
     'member-spotlight': '#d1a906',
     'meetings': '#2c3e50'
 }
-// Reference for Material UI components: https://mui.com/material-ui/react-grid/
-// 
-export default function Updates() {
-    // default to first tab on page if no other tabs are selected
-    const [selectedTab, setSelectedTab] = useState(updatesData.categories[0]);
-    // initiate variable to meetings JSON data
-    const color = tabColors[selectedTab.id] || '#0a1929';
 
-    // updates menu tabs
+// Reference for Material UI components: https://mui.com/material-ui/react-grid/
+export default function Updates() {
+    // initialize variables for tabs and updates data
+    const [selectedTab, setSelectedTab] = useState(null);
+    const [updatesData, setUpdatesData] = useState(null);
+
+    // load data from updatesServices
+    useEffect(() => {
+        getUpdates()
+            .then(data => {
+                setUpdatesData(data);
+                setSelectedTab(data.categories[0]);
+            })
+            .catch(loadError => console.error('Error loading updates:', loadError));
+    }, []);
+
+    // Return the template and content for updates page
     return (
         <div className="home-container">
             <Grid container spacing={2}>
@@ -63,7 +72,6 @@ export default function Updates() {
                                 key= {article.id}
                                 item={article}
                                 type={selectedTab.id === 'meetings' ? 'meeting' : 'article'}
-                                color={color} 
                                 />
                         ))}
                         </Stack>

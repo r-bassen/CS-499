@@ -26,9 +26,10 @@ function App() {
                     <Route path="/contract" element={<Contract />} />
                     <Route path="/survey" element={<Survey />} />
                     <Route path="/login" element={<Login />} />
-
                     {/* protected routes */}
                     <Route path = "/surveyresults" element={<SurveyResults />} />
+                    {/* redirect to home page */}
+                    <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </MainLayout>
             </div>

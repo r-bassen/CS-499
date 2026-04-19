@@ -2,9 +2,9 @@
 // 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { getSurveyResults} from "../services/surveyServices";
-import {authServices} from "../services/authServices";
-import SurveyForm from "./surveyForm";
+import { getSurveyResults} from "../services/surveyServices.jsx";
+import {authServices} from "../services/authServices.jsx";
+import SurveyForm from "./surveyForm.jsx";
 
 //Survey results component that fetches and displays aggregated survey results for a given survey ID
 export default function SurveyResults({ surveyId }) {

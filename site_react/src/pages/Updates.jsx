@@ -66,6 +66,19 @@ export default function Updates() {
                 
                 {/* Right Column - Main Content */}
                 <Grid size={8}>
+                    {/* Updates review section */}
+                    <Paper sx={{ p: 2, mb: 2, 
+                        backgroundColor: '#0a1929', 
+                        border: '4px solid #d1a906', 
+                        borderRadius: '4px' }}>
+                        <Typography variant="h6" sx={{ color: '#d1a906', borderBottom: '1px solid #d1a906', pb: 1, mb: 1 }}>
+                            CS-499 Capstone Project Review
+                            </Typography>
+                            <Typography variant="body2" sx={{ color: '#f0f4fa', lineHeight: 1.7 }}>
+                            The Updates page is part of the showcase of Enhancement One for the Capstone Project. 
+                                React libraries like Material UI enable modern, responsive design components for professional web development.
+                        </Typography>
+                    </Paper>
                     <Paper sx={{ p: 3, height: '100%', boxSizing: 'border-box' }}>
                         <Typography variant="h4" gutterBottom>
                             {selectedTab.title}

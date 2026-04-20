@@ -2,6 +2,11 @@
 ## Rachelle Bassen | SNHU BS in Computer Science | April 2026
 
 ------
+## Professional Self-Assessment
+
+[Read Rachelle Bassen's Professional Self-Assessment](./Bassen_Professional-Self-Assessment.docx)
+
+------
 ## WNC-NFA Chapter Website
 
 A full-stack website application as a final capstone project for the SNHU BS in Computer Science degree. The project demonstrates technical proficiency in frontend development, backend API design and database management.

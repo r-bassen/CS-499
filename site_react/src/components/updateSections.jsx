@@ -1,7 +1,7 @@
-// References: https://mui.com/material-ui/react-typography/
-// React component - UpdateItem
+// React component - Update page subcontent
+// This component builds a layout structure for the Updates page to embed meetings and article content.
+// There are four button tabs that load different updates topics.
 // Project code modified from the CS - 465 template and my final project(2025)
-// Reference for Material UI components: https://mui.com/material-ui/react-paper/
 // Reference for Material UI styling: https://mui.com/material-ui/customization/the-sx-prop/
 
 
@@ -22,12 +22,13 @@ export default function UpdateItem({item, type, color}) {
             '&:hover': {boxShadow: 6}
         }}>
 
+        {/* Reference: https://mui.com/material-ui/api/typography/ */}
         <Typography variant="subtitle1" sx={{fontWeight: 'bold', color: '#0a1929'}}>
             {item.title}
         </Typography>
 
         <Box sx={{ display: 'flex', gap:2, mt:1, fontSize: '0.875rem', color: '#666'}}>
-            <span>{item.date} </span>
+            <span>{item.date}</span>
             <span>{item.time}</span>
         </Box>
 

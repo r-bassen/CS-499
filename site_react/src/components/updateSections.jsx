@@ -65,7 +65,7 @@ export default function UpdateItem({item, type, color}) {
 
         {item.excerpt && (
             <Typography variant="body2" sx={{mt:1, color: '#0a1929'}}>
-                {item.excerpt}
+                {item.content}
             </Typography>
         )}
         </Paper>

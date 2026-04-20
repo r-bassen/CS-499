@@ -45,6 +45,7 @@ async function findUserById(id) {
     }
 }
 
+// Export the user model functions
 module.exports = {
     findUserByEmail,
     validatePassword,

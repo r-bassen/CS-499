@@ -1,0 +1,121 @@
+<div class="container mt-4">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+    <div class="container-fluid">
+      <span class="navbar-brand">Admin Panel</span>
+      <div class="navbar-nav">
+        <a class="nav-link" [routerLink]="['']">Trips</a>
+        <a class="nav-link active" [routerLink]="['/reservations']">Reservations</a>
+        <a class="nav-link" [routerLink]="['/users']">Users</a>
+        <a class="nav-link" (click)="logout()" style="cursor: pointer;">Settings</a>
+      </div>
+    </div>
+  </nav>
+
+  <h2>Manage Reservations</h2>
+
+  <!-- Add Reservation Button -->
+  <button class="btn btn-primary mb-3" (click)="showAddForm = !showAddForm">
+    {{ showAddForm ? 'Cancel' : 'Add Reservation' }}
+  </button>
+
+  <!-- Add Reservation Form -->
+  <div *ngIf="showAddForm" class="card mb-4">
+    <div class="card-body">
+      <h5>Add New Reservation</h5>
+      <form (ngSubmit)="addReservation()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label>User Name</label>
+            <input type="text" class="form-control" [(ngModel)]="newReservation.userName" name="userName" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>User Email</label>
+            <input type="email" class="form-control" [(ngModel)]="newReservation.userEmail" name="userEmail" required>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label>Trip Code</label>
+              <input type="text" class="form-control" [(ngModel)]="newReservation.code" name="code" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Trip Name</label>
+              <input type="text" class="form-control" [(ngModel)]="newReservation.name" name="name" required>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label>Length</label>
+            <input type="text" class="form-control" [(ngModel)]="newReservation.length" name="length" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Start Date</label>
+            <input type="date" class="form-control" [(ngModel)]="newReservation.start" name="start" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label>Resort</label>
+            <input type="text" class="form-control" [(ngModel)]="newReservation.resort" name="resort">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label>Number of Guests</label>
+            <input type="number" class="form-control" [(ngModel)]="newReservation.numGuests" name="numGuests">
+          </div>
+          <div class="col-md-4 mb-3">
+            <label>Total Cost</label>
+            <input type="text" class="form-control" [(ngModel)]="newReservation.totalCost" name="totalCost">
+          </div>
+        </div>
+        <div *ngIf="formError" class="alert alert-danger">{{ formError }}</div>
+        <button type="submit" class="btn btn-success">Add Reservation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="reservationsError" class="alert alert-danger">
+    {{ reservationsError }}
+  </div>
+
+  <!-- Reservations Table -->
+  <div class="card">
+    <div class="card-body">
+      <table class="table table-striped" *ngIf="reservations.length > 0">
+        <thead>
+          <tr>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Trip Code</th>
+            <th>Trip Name</th>
+            <th>Length</th>
+            <th>Start Date</th>
+            <th>Guests</th>
+            <th>Total Cost</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reservation of reservations">
+            <td>{{ reservation.userName }}</td>
+            <td>{{ reservation.userEmail }}</td>
+            <td>{{ reservation.code }}</td>
+            <td>{{ reservation.name }}</td>
+            <td>{{ reservation.length}}</td>
+            <td>{{ reservation.start | date:'short' }}</td>
+            <td>{{ reservation.numGuests }}</td>
+            <td>{{ reservation.totalCost }}</td>
+            <td>
+              <button class="btn btn-sm btn-danger" (click)="deleteReservation(reservation._id!)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="reservations.length === 0 && !reservationsError" class="alert alert-info">
+        No reservations found.
+      </div>
+    </div>
+  </div>
+</div>

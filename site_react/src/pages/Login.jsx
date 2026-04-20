@@ -39,7 +39,7 @@ export default function Login() {
         <div className = "login-page">
         <div className="login-wrapper">
         <h1>Faculty Survey Portal</h1>
-        <p>Please login to view and submit the WNC-NFA faculty survey.</p>
+        <p>Please login to access the WNC-NFA faculty survey.</p>
 
         {/* Error alert */}
         {error && (
@@ -78,13 +78,6 @@ export default function Login() {
             className="login-submit-btn">Login</button>
 
         </form>
-
-        {/* demo login credentials */}
-        <div className = "login-footer">
-            <p>Demo credentials:</p>
-            <p className = "demo-creds">Email: faculty@wnc-nfa.edu</p>
-            <p className = "demo-creds">Password: password123</p>
-        </div>
         </div>
         </div>
   );

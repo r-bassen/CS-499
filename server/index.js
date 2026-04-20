@@ -18,6 +18,7 @@ const routes = require('./routes/index');
 const app = express();
 const path = require('path');
 
+// set website links to either localhost or gh-pages
 const allowedOrigins = [
     'http://localhost:5173',
     'https://r-bassen.github.io'

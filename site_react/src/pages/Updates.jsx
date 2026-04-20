@@ -49,7 +49,7 @@ export default function Updates() {
                         {/* Set the sidebar tab layout */}
                         {updatesData.categories.map(category => 
                             <Paper key={category.id}
-                            sx={{ p: 2,
+                            sx={{ p: 1,
                                 bgcolor: selectedTab.id === category.id ? '#d1a906' : '#f5f5f5',
                                 color: selectedTab.id === category.id ? 'white' : 'inherit',
                                 cursor: 'pointer',

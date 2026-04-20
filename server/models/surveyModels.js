@@ -1,10 +1,10 @@
-// model functions for survey-related database operations
+// Model functions for survey-related database operations
 // Reference: Modified from the CS-465 Final Project
 
 // PostgreSQL queries for survey-related operations
 const pool = require('../config/db');
 
-// get all questions for a survey
+// Get all questions for a survey
 async function getSurveyQuestions(surveyId) {
     try {
         const countResult = await pool.query(
@@ -13,15 +13,15 @@ async function getSurveyQuestions(surveyId) {
             WHERE survey_id = $1`,
             [surveyId]
         );
-        return rows;    // return all rows from the query result
+        return rows;    // Return all rows from the query result
     }
-    catch (qError) {   // log any errors with fetching survey questions
+    catch (qError) {   // Log any errors with fetching survey questions
         console.error('Error fetching survey questions:', qError);
         throw qError; 
 }
 }
 
-// create a new survey response
+// Create a new survey response
 async function createSurveyResponse(userId, surveyId) {
     try {
         const { rows } = await pool.query(
@@ -30,9 +30,9 @@ async function createSurveyResponse(userId, surveyId) {
             RETURNING id`,
             [userId, surveyId]
         );
-        return rows[0].id;    // return the id of the submitted survey response
+        return rows[0].id;    // Return the id of the submitted survey response
 
-    } catch (err) {     // log any errors with creating a new survey response
+    } catch (err) {     // Log any errors with creating a new survey response
         console.error('Error creating survey response:', err);
         throw err;  
 }
@@ -56,13 +56,13 @@ async function saveSurveyResponse(responseId, questionId, value, text) {
                     [responseId, questionId, value]
             );
         }
-    } catch (resError) {     // log any errors with saving a survey answer
+    } catch (resError) {     // Log any errors with saving a survey answer
         console.error('Error saving survey responses:', resError);
         throw resError;  
 }
 }
 
-// get aggregated survey results for a given survey ID
+// Get aggregated survey results for a given survey ID
 async function getSurveyResults(surveyId) {
     try {
         const countResult = await pool.query(
@@ -70,14 +70,14 @@ async function getSurveyResults(surveyId) {
             [surveyId]
         );
 
-        // return empty array if no survey responses found for the given survey ID
+        // Return empty array if no survey responses found for the given survey ID
         if (countResult.rows[0].count === '0') {
             console.log('No survey responses found for survey ID:', surveyId);
             return [];      
          }
 
-        // join survey answers by question then responses
-        // group and order by question and answer value
+        // Join survey answers by question then responses
+        // Group and order by question and answer value
         const { rows } = await pool.query(
             `SELECT q.id AS question_id, q.question, a.value, COUNT(*) as count
             FROM survey_answers a
@@ -97,6 +97,7 @@ async function getSurveyResults(surveyId) {
     }
 }
 
+// Export the survey model functions
 module.exports = {
     getSurveyQuestions,
     createSurveyResponse,

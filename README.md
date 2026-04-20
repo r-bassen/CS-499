@@ -4,7 +4,7 @@
 ------
 ## Professional Self-Assessment
 
-[Read Rachelle Bassen's Professional Self-Assessment](./Bassen_Professional-Self-Assessment.docx)
+[Read Rachelle Bassen's Professional Self-Assessment](./Bassen_Professional-Self-Assessment.pdf)
 
 ------
 ## WNC-NFA Chapter Website

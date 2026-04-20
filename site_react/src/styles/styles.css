@@ -232,6 +232,30 @@ p {
 	margin-bottom: 15px;
 }
 
+/* capstone review section formatting */
+.content-review {
+	background-color: #0a1929;
+	color: #ffffff;
+	border-radius: 4px;
+	padding: 20px;
+	margin-bottom: 30px;
+	border: 4px solid #d1a906;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content-review h2 {
+	color: #d1a906;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #d1a906;
+	margin-bottom: 15px;
+}
+
+.content-review p {
+	color: #f0f4fa;
+	line-height: 1.7;
+	margin-bottom: 15px;
+}
+
 /*------------------------------ SURVEY CONTAINER ------------------------------*/
 /* Reference: https://support.whatfix.com/docs/survey-customization-using-css */
 .surveycontainer {

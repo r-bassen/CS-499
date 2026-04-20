@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Trips</h2>
+    <button (click) ="addTrip()" class="btn btn-info">Add Trip</button>
+    </div>
+    <table class="table table-striped" *ngIf="trips && trips.length > 0">
+      <thead>
+        <tr>
+          <th>Trip Code</th>
+          <th>Trip Name</th>
+          <th>Length</th>
+          <th>Start Date</th>
+          <th>Resort</th>
+          <th>Per Person</th>
+          <th> </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let trip of trips">
+          <td>{{ trip.code }}</td>
+          <td>{{ trip.name }}</td>
+          <td>{{ trip.length }}</td>
+          <td>{{ trip.start }}</td>
+          <td>{{ trip.resort }}</td>
+          <td>{{ trip.perPerson | currency }}</td>
+          <td>
+            <button class="btn btn-sm btn-primary me-1" (click)="editTrip">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteTrip">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="!trips || trips.length === 0" class="alert alert-info">{{ message || 'No trips found.' }}</div>
+  </div>

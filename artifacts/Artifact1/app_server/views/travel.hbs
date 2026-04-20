@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Travel - Travlr Getaways</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="background">
+        <div id="page">
+            {{> header}}
+            <div id="contents">
+                <div class="box">
+                    <div>
+                        <div class="body">
+                            <h1>Travel</h1>
+                            {{#if message}}
+                            <div class="alert alert-info">{{message}}</div>
+                            {{/if}}
+                                <div class="row">
+                                    {{#each trips}}
+                                    <div class="col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            {{#if this.image}}
+                                            <a href="/trips/{{this.code}}">
+                                                <img src="/images/{{this.image}}" class="card-img-top" alt="{{this.name}}">
+                                            </a>
+                                            {{/if}}
+                                            <div class="card-body">
+                                                <h5 class="card-title">{{this.name}}</h5>
+                                                <p class="card-text">{{this.description}}</p>
+                                                <ul class="list-unstyled">
+                                                    <li><strong>Code:</strong> {{this.code}}</li>
+                                                    <li><strong>Length:</strong> {{this.length}} days</li>
+                                                    <li><strong>Start:</strong> {{this.start}}</li>
+                                                    <li><strong>Resort:</strong> {{this.resort}}</li>
+                                                    <li><strong>Price:</strong> ${{this.perPerson}}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="card-footer">
+                                                {{#if loggedIn}}
+                                                <form action="/checkout/{{this.code}}" method="POST">
+                                                    <input type="number" name="numGuests" value="1" min="1" required>
+                                                    <button type="submit" class="btn btn-success">Login to Reserve!</button>
+                                                </form>
+                                                {{else}}
+                                                <a href="/login?redirect=/checkout/{{this.code}}" class="btn btn-success">Book now!</a>
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            {{> footer}}
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            document.querySelectorAll('.reserve-btn').forEach(button => {
+
+                button.addEventListener('click', () => {
+                    const code = button.dataset.code;
+                    window.location.href = `/reservations/${code}`;
+                });
+            });
+        
+        });
+    </script>
+</body>
+</html>

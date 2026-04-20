@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}} - Travlr Getaways</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+<body>
+    <div id="background">
+        <div id="page">
+            {{> header}}
+            <div id="contents">
+                <div class="box">
+                    <div>
+                        <h2>Checkout</h2>
+
+                        {{#if trip}}
+                        <p>Trip Code: {{trip.code}}</p>
+                        <p>Trip Name: {{trip.name}}</p>
+                        <p>Price: ${{trip.perPerson}}</p>
+
+                        {{#if loggedIn}}
+                        <form action="/checkout/{{trip.code}}" method="POST">
+                            <div class="form-group">
+                                <label for="numGuests">Number of Guests:</label>
+                                <input type="number" id="numGuests" name="numGuests" min="1" value="1" required>
+                            </div>
+                            <button type="submit" class="btn btn-success">Confirm Reservation</button>
+                        </form>
+                        {{else}}
+                        <p>Please <a href="/login?redirect=/checkout/{{trip.code}}">login</a> to reserve this trip.</p>
+                        {{/if}}
+
+                        {{else}}
+                        <p>No trip selected for checkout.</p>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+            {{> footer}}
+        </div>
+    </div>
+
+
+</body>
+</html>

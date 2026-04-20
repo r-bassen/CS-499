@@ -13,6 +13,13 @@ export default function Home() {
                 <p>This project is showcased through GitHub Pages with a Render backend, built by Rachelle Bassen as the final capstone for SNHU BS in Computer Science. </p>
                 <a href="https://youtu.be/PVG7TXfMUlU" target="_blank" rel="noreferrer" className="video-link">
                     Click here for the Code Review video </a>
+
+                <p>Rachelle Bassen's Professional Self-Review Available for Download:</p>
+                    <a href={`${import.meta.env.BASE_URL}Bassen_Professional-Self-Assessment.pdf`} 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="video-link">
+                    Download the Professional Self-Assessment</a>
                 </section>
 
                 {/* Intro section */}

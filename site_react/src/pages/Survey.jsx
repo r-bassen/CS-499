@@ -133,7 +133,7 @@ if (submit) {
                             <h2>CS-499 Capstone Project Review</h2>
                                 <p>This survey is a showcase of Enhancements Two and Three for the Capstone Project. 
                                     The survey results are stored in PostgreSQL. 
-                                    Live results are aggregated using a quicksort algorithm. </p>
+                                    Survey responses are sorted and aggregated using a quicksort algorithm for display. </p>
                                 </section>
                         <div className = "survey-header">
                             <h1>Faculty Survey</h1>

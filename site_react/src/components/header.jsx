@@ -13,7 +13,12 @@ export default function Header() {
                 <img 
                     src={`${import.meta.env.BASE_URL}logo.png`}
                     alt="WNC NFA Logo" 
-                    style={{ height: "110px" }}
+                    style={{ height: "100px",
+                        border: "2px solid #d1a906",
+                        borderRadius: "8px",
+                        padding: "4px",
+                        backgroundColor: "#ffffff"
+                     }}
                 />
                 </div>
 

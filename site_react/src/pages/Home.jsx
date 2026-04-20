@@ -5,13 +5,12 @@ export default function Home() {
     return (
         <div className="home-container">
             <main>
-                    <h1>WNC-NFA Chapter Website</h1>
-                   
-                    <p className="intro">
-                        The Nevada Faculty Alliance (NFA) at Western Nevada College serves full-time academic faculty as their union representative.
-                        We strive to advocate and protect our rights to bargain for better terms and conditions of employment.
-                        Our union was established in 2014.
-                    </p>
+                <h1>WNC-NFA Chapter Website</h1>
+                <p className="intro">
+                    The Nevada Faculty Alliance (NFA) at Western Nevada College serves full-time academic faculty as their union representative.
+                    We strive to advocate and protect our rights to bargain for better terms and conditions of employment.
+                    Our union was established in 2014.
+                </p>
 
                 <section className="news-highlight">
 
@@ -25,8 +24,14 @@ export default function Home() {
                         Please consider joining today!
                     </p>
                     <p>
-                        "Faculty Benefits are Student Benefits".
+                        <em>"Faculty Benefits are Student Benefits".</em>
                     </p>
+                </section>
+                <section className="content-review">
+                    <h2>Welcome to Rachelle Bassen's CS-499 Capstone Project</h2>
+                    <p>The project is being showcased through Github Pages using Render.</p>
+                    <p>A code review of the two artifacts used in this project is available on YouTube:</p>
+                    <h3><a href="https://youtu.be/PVG7TXfMUlU">Click here for the Code Review video</a></h3>
                 </section>
             </main>
         </div>

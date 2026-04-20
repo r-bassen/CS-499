@@ -32,7 +32,7 @@
     },
     {
       "id": 104,
-      "questionTitle": "Faculty can participate in the decision-making processes at WNC.",
+      "questionTitle": "Faculty receive adequate support and resources to perform their job effectively at WNC.",
       "type": "scale"
     },
     {
@@ -42,7 +42,7 @@
     },
     {
       "id": 106,
-      "questionTitle": "Faculty receive adequate support and resources to perform their job effectively at WNC.",
+      "questionTitle": "Which of the following issues do you think that your Union should prioritize in our next negotiations?",
       "type": "multi",
       "options": [
         "Better pay and benefits",

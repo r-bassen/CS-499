@@ -79,7 +79,7 @@ export default function Updates() {
                                 React libraries like Material UI enable modern, responsive design components for professional web development.
                         </Typography>
                     </Paper>
-                    <Paper sx={{ p: 3, height: '100%', boxSizing: 'border-box' }}>
+                    <Paper sx={{ p: 3, boxSizing: 'border-box' }}>
                         <Typography variant="h4" gutterBottom>
                             {selectedTab.title}
                         </Typography>

@@ -36,7 +36,7 @@ export default function Updates() {
 
     // Return the template and content for updates page
     if (!updatesData || !selectedTab) {
-        return;
+        return null;
     }
 
     // Return the template and content for updates page

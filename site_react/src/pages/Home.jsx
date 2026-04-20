@@ -6,14 +6,24 @@ export default function Home() {
         <div className="home-container">
             <main>
                 <h1>WNC-NFA Chapter Website</h1>
+
+                {/* Capstone intro section */}
+                <section className="content-review">
+                <h2>CS-499 Capstone Project</h2>
+                <p>This project is showcased through GitHub Pages with a Render backend, built by Rachelle Bassen as the final capstone for SNHU BS in Computer Science. </p>
+                <a href="https://youtu.be/PVG7TXfMUlU" target="_blank" rel="noreferrer" className="video-link">
+                    Click here for the Code Review video </a>
+                </section>
+
+                {/* Intro section */}
                 <p className="intro">
                     The Nevada Faculty Alliance (NFA) at Western Nevada College serves full-time academic faculty as their union representative.
                     We strive to advocate and protect our rights to bargain for better terms and conditions of employment.
                     Our union was established in 2014.
                 </p>
 
+                {/* About section */}
                 <section className="news-highlight">
-
                     <h2>About the WNC-NFA Chapter</h2>
                     <p>
                         Our mission is to represent faculty through collaborative outreach and advocacy. We strive to uphold and improve our terms and 
@@ -26,12 +36,6 @@ export default function Home() {
                     <p>
                         <em>"Faculty Benefits are Student Benefits".</em>
                     </p>
-                </section>
-                <section className="content-review">
-                    <h2>Welcome to Rachelle Bassen's CS-499 Capstone Project</h2>
-                    <p>The project is being showcased through Github Pages using Render.</p>
-                    <p>A code review of the two artifacts used in this project is available on YouTube:</p>
-                    <h3><a href="https://youtu.be/PVG7TXfMUlU">Click here for the Code Review video</a></h3>
                 </section>
             </main>
         </div>

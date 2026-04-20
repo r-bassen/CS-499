@@ -256,6 +256,25 @@ p {
 	margin-bottom: 15px;
 }
 
+/* Youtube video link button formatting */
+.video-link {
+    display: inline-block;
+    background-color: #d1a906;
+    color: #0a1929 !important;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.video-link:hover {
+    background-color: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 /*------------------------------ SURVEY CONTAINER ------------------------------*/
 /* Reference: https://support.whatfix.com/docs/survey-customization-using-css */
 .surveycontainer {

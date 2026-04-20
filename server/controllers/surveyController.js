@@ -146,6 +146,7 @@ async function getSurveyResults(req, res) {
     }
 }
 
+// export the survey questions
 module.exports = {
     getSurveyQuestions,
     submitSurvey,

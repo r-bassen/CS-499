@@ -72,6 +72,13 @@ export default function Login() {
                 required
                 placeholder = "Enter your password"/> {/* placeholder entry */}
             </div>
+
+            {/* demo login credentials */}
+            <div className = "login-footer">
+                <p>Demo credentials:</p>
+                <p className = "demo-creds">Email: jane.doe@wnc-nfa.edu</p>
+                <p className = "demo-creds">Password: mynfawebsite</p>
+            </div>
             
             {/* login submit button logic */}
             <button type="submit"

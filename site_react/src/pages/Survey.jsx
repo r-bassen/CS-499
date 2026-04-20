@@ -128,6 +128,13 @@ if (submit) {
             // Main survey view
             return (
                     <div className="survey-container">
+                        {/* Survey review section */}
+                        <section className="content-review">
+                            <h2>CS-499 Capstone Project Review</h2>
+                                <p>This survey is a showcase of Enhancements Two and Three for the Capstone Project. 
+                                    The survey results are stored in PostgreSQL. 
+                                    Live results are aggregated using a quicksort algorithm. </p>
+                                </section>
                         <div className = "survey-header">
                             <h1>Faculty Survey</h1>
                             {/* Logout button handler */}
@@ -160,7 +167,7 @@ if (submit) {
                                 </div>
                                 </form>
                             ) : (
-                                <p></p>
+                                null
                             )}
                         </div>
                 </div>

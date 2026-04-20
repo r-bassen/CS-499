@@ -11,6 +11,7 @@ import { Paper, Typography, Box } from '@mui/material';
 // header component 
 // designed with union logo and navigation bar
 export default function UpdateItem({item, type, color}) {
+    // Set the layout design for meeting info
     if (type === 'meeting') {
            return (
             // Reference: https://mui.com/material-ui/react-paper/
@@ -27,7 +28,7 @@ export default function UpdateItem({item, type, color}) {
 
         <Box sx={{ display: 'flex', gap:2, mt:1, fontSize: '0.875rem', color: '#666'}}>
             <span>{item.date} </span>
-            <span>{item.item}</span>
+            <span>{item.time}</span>
         </Box>
 
         <Typography variant="body2" sx={{mt:1, color: '#0a1929'}}>
@@ -38,12 +39,15 @@ export default function UpdateItem({item, type, color}) {
             {item.agenda}
         </Typography>
 
-        <Typography variant="body2" sx={{ mt: 1 }}><strong>Zoom Link: </strong>{item.zoomlink}</Typography>
-
+        {item.zoomlink && (<Typography variant="body2" sx={{ mt: 1 }}>
+            <strong>Zoom Link: </strong>{item.zoomlink}
+        </Typography>
+        )}
         </Paper>
            );
         }
 
+        // If not a meeting, then return the layout for article content
         return (
             <Paper elevation={2}
             sx={{
@@ -63,11 +67,9 @@ export default function UpdateItem({item, type, color}) {
                 </span>}
         </Box>
 
-        {item.excerpt && (
-            <Typography variant="body2" sx={{mt:1, color: '#0a1929'}}>
-                {item.content}
-            </Typography>
-        )}
-        </Paper>
-        );
-    }
+        <Typography variant="body2" sx={{mt:1, color: '#0a1929'}}>
+            {item.content}
+        </Typography>
+    </Paper>
+    );
+}

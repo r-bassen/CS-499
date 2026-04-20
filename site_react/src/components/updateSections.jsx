@@ -67,9 +67,11 @@ export default function UpdateItem({item, type, color}) {
                 </span>}
         </Box>
 
+        {item.content && (
         <Typography variant="body2" sx={{mt:1, color: '#0a1929'}}>
             {item.content}
         </Typography>
+        )}
     </Paper>
     );
 }
